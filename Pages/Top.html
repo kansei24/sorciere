@@ -1,10 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>TEST</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第10回公演</title>
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+        }
+        .nav-bar {
+          display: flex;
+          justify-content: space-around;
+          background-color: #333;
+          padding: 10px 0;
+        }
+        .nav-bar a {
+          color: white;
+          text-decoration: none;
+          font-size: 16px;
+          padding: 10px 20px;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+        }
+        .nav-bar a:hover {
+          background-color: #575757;
+        }
+    </style>
 </head>
 <body>
+
+<div class="nav-bar">
+    <a href="#home">ホーム</a>
+    <a href="#news">ニュース</a>
+    <a href="#intro">イントロダクション</a>
+    <a href="#cast">キャスト</a>
+    <a href="#creative">クリエイティブ</a>
+    <a href="#ticket">チケット＆スケジュール</a>
+    <a href="#movie">ムービー</a>
+    <a href="#goods">グッズ</a>
+</div>
+
+<!-- コンテンツ部分 -->
+<div id="home" style="padding: 20px;">
+    <h2>ホーム</h2>
+    <p>こちらはホームセクションです。</p>
+</div>
+<div id="news" style="padding: 20px;">
+    <h2>ニュース</h2>
+    <p>こちらはニュースセクションです。</p>
+</div>
+<div id="intro" style="padding: 20px;">
+    <h2>イントロダクション</h2>
+    <p>こちらはイントロダクションセクションです。</p>
+</div>
+<div id="cast" style="padding: 20px;">
+    <h2>キャスト</h2>
+    <p>こちらはキャストセクションです。</p>
+</div>
+<div id="creative" style="padding: 20px;">
+    <h2>クリエイティブ</h2>
+    <p>こちらはクリエイティブセクションです。</p>
+</div>
+<div id="ticket" style="padding: 20px;">
+    <h2>ニュース</h2>
+    <p>こちらはチケット＆スケジュールセクションです。</p>
+</div>
+<div id="movie" style="padding: 20px;">
+    <h2>モービー</h2>
+    <p>こちらはムービーセクションです。</p>
+</div>
+<div id="goods" style="padding: 20px;">
+    <h2>グッズ</h2>
+    <p>こちらはグッズセクションです。</p>
+</div>
+
+<script>
+    // 各セクションにスクロールする機能を追加
+    const links = document.querySelectorAll('.nav-bar a');
+    links.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetId = event.target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        window.scrollTo({
+          top: targetElement.offsetTop - 10, // 微調整
+          behavior: 'smooth'
+        });
+      });
+    });
+</script>
 
 </body>
 </html>
